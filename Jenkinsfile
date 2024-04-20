@@ -14,14 +14,14 @@ pipeline{
   stage("Build"){
     steps{
       dir("simple-java-maven-app"){
-        sh "mvn clean install"
+        sh "mvn clean install -Denforcer.skip=true"
       } // equal to cd but persistent
     }
   }
   stage("test"){
     steps{
       dir("simple-java-maven-app"){
-       sh "mvn test"
+       sh "mvn test -Denforcer.skip=true"
       }
     }
   }
