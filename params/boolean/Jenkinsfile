@@ -1,0 +1,13 @@
+pipeline{
+  agent any
+  parameters{
+    booleanParam(defaultValue:false, description:"Enable or disable", name:"myChoices")
+  }
+  stages{
+    stage("Demo"){
+      steps{
+        echo "${params.myChoices}"
+      }
+    }
+  }
+}
